@@ -8,7 +8,7 @@ A premium, highly interactive, and persistent farming system for RedM VORPCore. 
 - 🪵 **Ghost Placement System**: Fine-tuned placement of crops with real-time controls (`W`/`A`/`S`/`D` to move, `Q`/`E` to rotate, `ENTER` to plant, `BACKSPACE` to cancel).
 - 💧 **Watering & Hydration**: Plants decay in water over time. Players must water them (~3 times per cycle) using buckets. Includes a water interaction menu to fill buckets, wash, or drink from natural water sources (lakes, rivers) and pumps.
 - 💩 **Fertilization**: Applying fertilizer boosts growth rate by **35%**.
-- 🪴 **44 Supported Crops**: Features a massive variety of wild plants, herbs, vegetables, grains, and fruit trees.
+- 🪴 **60 Supported Crops**: Features a massive variety of wild plants, herbs, vegetables, grains, and fruit trees.
 - 📦 **Resource Box & Item Images**: Support for inventory images. Harvested crops display as resource box items (for relevant crops) or standard raw herbs.
 - 🖥️ **Status UI**: Open the NUI menu on any plant to inspect its Water Level, Growth percentage, Health status, and dynamic crop image/artwork in the header.
 - 💾 **Persistence**: Database integration ensures plants, locations, and growth levels persist through server restarts.
