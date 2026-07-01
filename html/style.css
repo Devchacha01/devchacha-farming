@@ -1,0 +1,587 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+    font-family: 'IM Fell English SC', serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   PLANT STATUS MENU - WILD WEST THEME
+   ============================================ */
+
+#plant-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeSlideIn 0.4s ease-out;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.menu-container {
+    /* Background ID: Light-Leafy */
+    background-image: url('bg_farming.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    background-color: transparent !important;
+
+    /* Box Dimensions - Increased Size */
+    width: 540px;
+    height: 720px;
+
+    /* Padding to clear the leafy frame (Top/Right/Bottom/Left) */
+    padding: 120px 95px 90px 95px;
+
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.menu-container::before,
+.menu-container::after,
+.menu-border-left,
+.menu-border-right {
+    display: none;
+}
+
+/* Header */
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3d5a2c;
+    /* Dark Green Divider */
+    position: relative;
+}
+
+.plant-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.plant-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.header-info h1 {
+    font-family: 'Rye', cursive;
+    color: #1b330a;
+    /* Very Dark Green */
+    font-size: 32px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.plant-type {
+    color: #3d5a2c;
+    /* Forest Green */
+    font-size: 15px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #8B0000;
+    border: 2px solid #2d4a1c;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: #a00000;
+    transform: scale(1.1);
+}
+
+/* Progress Section */
+.progress-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    color: #1b330a;
+    /* Dark Green */
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.progress-bar {
+    height: 18px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #3d5a2c;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+    position: relative;
+    /* Glass shine */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Gradient Adjustments */
+.progress-fill.water {
+    background: linear-gradient(180deg, #4FC3F7, #0288D1);
+}
+
+.progress-fill.growth {
+    background: linear-gradient(180deg, #81C784, #388E3C);
+}
+
+.progress-fill.health {
+    background: linear-gradient(180deg, #E57373, #D32F2F);
+}
+
+.progress-fill.weeds {
+    background: linear-gradient(180deg, #D4E157, #9E9D24);
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    background: rgba(61, 90, 44, 0.15);
+    /* Green Tint */
+    border-radius: 6px;
+    border: 1px dashed #3d5a2c;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.info-icon {
+    font-size: 18px;
+    color: #2d4a1c;
+}
+
+.info-label {
+    color: #3d5a2c;
+    font-weight: 700;
+}
+
+.info-value {
+    color: #1b330a;
+    font-weight: 800;
+}
+
+/* Actions Grid */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.action-btn {
+    background: linear-gradient(180deg, #4a6633 0%, #2d4a1c 100%);
+    border: 1px solid #1b330a;
+    border-radius: 6px;
+    padding: 14px;
+    color: #f1f8e9;
+    font-size: 14px;
+    font-family: 'IM Fell English SC', serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.action-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+.action-btn .icon {
+    font-size: 20px;
+}
+
+.action-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.action-btn.harvest {
+    border-color: #2e7d32;
+}
+
+.action-btn.harvest:hover {
+    background: linear-gradient(180deg,
+            #66bb6a 0%,
+            #2e7d32 100%);
+    border-color: #81c784;
+}
+
+.action-btn.destroy {
+    background: linear-gradient(180deg,
+            #c62828 0%,
+            #b71c1c 100%);
+    border-color: #b71c1c;
+}
+
+.action-btn.destroy:hover {
+    background: linear-gradient(180deg,
+            #ef5350 0%,
+            #d32f2f 100%);
+    border-color: #e57373;
+}
+
+/* ============================================
+   PROGRESS BAR OVERLAY - GREEN NATURE THEME
+   ============================================ */
+
+#progress-overlay {
+    position: fixed;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.progress-container {
+    background: linear-gradient(180deg,
+            rgba(45, 74, 28, 0.95) 0%,
+            rgba(27, 51, 10, 0.98) 100%);
+    border: 2px solid #2d4a1c;
+    border-radius: 8px;
+    padding: 20px 40px;
+    min-width: 350px;
+    text-align: center;
+    box-shadow:
+        0 0 0 2px #1b330a,
+        0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+.progress-title {
+    font-family: 'Rye', cursive;
+    color: #f1f8e9;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.progress-bar-outer {
+    height: 24px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid #1b330a;
+    margin-bottom: 10px;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #66bb6a, #43a047, #2e7d32);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+    position: relative;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+}
+
+.progress-bar-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.3) 0%,
+            transparent 100%);
+}
+
+.progress-percentage {
+    font-family: 'Rye', cursive;
+    color: #f1f8e9;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ============================================
+   TEXT POPUP - GREEN NATURE THEME
+   ============================================ */
+
+#text-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    animation: popIn 0.4s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.popup-content {
+    font-family: 'Rye', cursive;
+    font-size: 20px;
+    color: #f1f8e9;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.9),
+        0 0 10px rgba(76, 175, 80, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    background: linear-gradient(180deg,
+            rgba(45, 74, 28, 0.95) 0%,
+            rgba(27, 51, 10, 0.98) 100%);
+    border: 2px solid #2d4a1c;
+    border-radius: 6px;
+    box-shadow:
+        0 0 0 2px #1b330a,
+        0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .menu-container {
+        min-width: 90vw;
+        padding: 20px;
+    }
+
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   WATER SOURCE MENU - GREEN NATURE THEME
+   ============================================ */
+
+#water-menu {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    z-index: 900;
+    animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.water-menu-container {
+    background: linear-gradient(180deg,
+            rgba(45, 74, 28, 0.95) 0%,
+            rgba(27, 51, 10, 0.98) 100%);
+    border: 3px solid #2d4a1c;
+    border-radius: 8px;
+    padding: 0;
+    min-width: 260px;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 2px #1b330a,
+        0 15px 50px rgba(0, 0, 0, 0.9),
+        inset 0 0 60px rgba(0, 0, 0, 0.3);
+}
+
+.water-menu-header {
+    background: linear-gradient(180deg,
+            rgba(61, 90, 44, 0.9) 0%,
+            rgba(45, 74, 28, 0.95) 100%);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid rgba(76, 175, 80, 0.4);
+}
+
+.water-icon {
+    font-size: 28px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+    color: #f1f8e9;
+}
+
+.water-title {
+    font-family: 'Rye', cursive;
+    color: #f1f8e9;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.water-menu-buttons {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.water-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: linear-gradient(180deg,
+            rgba(45, 74, 28, 0.6) 0%,
+            rgba(27, 51, 10, 0.8) 100%);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 6px;
+    color: #f1f8e9;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.water-btn:hover {
+    background: linear-gradient(180deg,
+            rgba(76, 175, 80, 0.4) 0%,
+            rgba(56, 142, 60, 0.5) 100%);
+    border-color: #f1f8e9;
+    transform: translateX(-5px);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.water-btn:active {
+    transform: translateX(-2px);
+}
+
+.water-btn .btn-icon {
+    font-size: 22px;
+}
+
+.water-btn .btn-text {
+    flex: 1;
+    text-align: left;
+}
+
+.water-btn .btn-key {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.water-menu-footer {
+    padding: 10px 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+}

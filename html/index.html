@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Plant Status Menu -->
+    <div id="plant-menu" class="hidden">
+        <div class="menu-container">
+            <div class="menu-border-left"></div>
+            <div class="menu-border-right"></div>
+
+            <!-- Header -->
+            <div class="menu-header">
+                <div class="plant-icon">
+                    <img id="plant-image" src="images/crop_default.png" alt="Crop Icon">
+                </div>
+                <div class="header-info">
+                    <h1 id="plant-title">Crop Status</h1>
+                    <div class="plant-type" id="plant-type">Corn</div>
+                </div>
+                <button class="close-btn" onclick="closeMenu()">✕</button>
+            </div>
+
+            <!-- Progress Bars -->
+            <div class="progress-section">
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>💧 Water Level</span>
+                        <span id="water-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill water" id="water-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>🌱 Growth</span>
+                        <span id="growth-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill growth" id="growth-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>❤️ Health</span>
+                        <span id="health-percent">100%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill health" id="health-bar" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>🌿 Weeds</span>
+                        <span id="weed-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill weeds" id="weed-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="info-icon">⏱️</span>
+                    <span class="info-label">Time Remaining:</span>
+                    <span class="info-value" id="time-remaining">--:--</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📊</span>
+                    <span class="info-label">Status:</span>
+                    <span class="info-value" id="plant-status">Needs Water</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions-grid" id="actions-grid">
+                <!-- Buttons will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar Overlay -->
+    <div id="progress-overlay" class="hidden">
+        <div class="progress-container">
+            <div class="progress-title" id="progress-title">Working...</div>
+            <div class="progress-bar-outer">
+                <div class="progress-bar-inner" id="progress-bar-inner"></div>
+            </div>
+            <div class="progress-percentage" id="progress-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Text Popup -->
+    <div id="text-popup" class="hidden">
+        <div class="popup-content" id="popup-content">
+            Planting Seeds...
+        </div>
+    </div>
+
+    <!-- Water Source Menu -->
+    <div id="water-menu" class="hidden">
+        <div class="water-menu-container">
+            <div class="water-menu-header">
+                <span class="water-icon">💧</span>
+                <span class="water-title">WATER SOURCE</span>
+            </div>
+            <div class="water-menu-buttons">
+                <button class="water-btn" onclick="waterAction('fillBucket')">
+                    <span class="btn-icon">🪣</span>
+                    <span class="btn-text">Fill Bucket</span>
+                    <span class="btn-key">[G]</span>
+                </button>
+                <button class="water-btn" onclick="waterAction('drink')">
+                    <span class="btn-icon">🥤</span>
+                    <span class="btn-text">Drink</span>
+                    <span class="btn-key">[J]</span>
+                </button>
+                <button class="water-btn" onclick="waterAction('wash')">
+                    <span class="btn-icon">🧼</span>
+                    <span class="btn-text">Wash</span>
+                    <span class="btn-key">[↵]</span>
+                </button>
+            </div>
+            <div class="water-menu-footer">
+                Press ESC to close
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

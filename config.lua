@@ -1,0 +1,1117 @@
+Config = {}
+Config.Debug = false
+
+-- Keybinds (Standard RedM/RSG keys)
+Config.Keys = {
+    ["G"] = 0x760A9C6F,
+    ["F"] = 0xB2F377E8,
+    ["BACKSPACE"] = 0x156F7119,
+    ["ENTER"] = 0xC7B5340A,
+    ["E"] = 0xCEFD9220,
+    ["SHIFT"] = 0x8FFC75D6,
+    ["LALT"] = 0x8AAA0AD4,
+    ["B"] = 0x4CC0E2FE,
+    ["J"] = 0xF3830D8E, 
+}
+
+Config.EnableBannedZones = true
+Config.BannedZones = {
+    -- Town Name, Radius
+    { coords = vector3(-179.52, 626.71, 114.09), radius = 50.0, name = "Valentine" },
+    { coords = vector3(-315.34, 733.91, 117.8), radius = 100.0, name = "Valentine Station" },
+    { coords = vector3(2725.68, -1251.15, 49.62), radius = 150.0, name = "Saint Denis" },
+    { coords = vector3(1346.04, -1320.18, 77.01), radius = 80.0, name = "Rhodes" }, 
+    { coords = vector3(-812.96, -1320.57, 43.68), radius = 100.0, name = "Blackwater" },
+    { coords = vector3(-3684.69, -2600.67, -13.62), radius = 100.0, name = "Armadillo" },
+    { coords = vector3(2924.96, 1332.22, 44.55), radius = 80.0, name = "Annesburg" },
+    { coords = vector3(-1782.9, -391.24, 156.96), radius = 50.0, name = "Strawberry" },
+    { coords = vector3(-5244.59, -3013.31, -5.69), radius = 80.0, name = "Tumbleweed" },
+}
+
+Config.DrawText = true
+Config.RenderDistance = 20.0
+Config.PlantSpace = 1.5
+Config.RequestUpdateTime = 2 -- minutes
+
+Config.Items = {
+    water = "water", -- Item given when filling bucket/drinking
+    emptybucket = "emptybucket", -- Item required to fill water (optional logic)
+    fullbucket = "fullbucket", -- Item given after filling
+    fertilizer = "fertilizer",
+    trimmer = "shears", 
+}
+
+-- Farming Shop NPC
+-- Farming Shop NPCs
+Config.ShopNPCs = {
+    {
+        coords = vector3(2842.99, -1235.43, 47.67),
+        heading = 180.0,
+        model = "A_M_M_UniBoatCrew_01",
+        blip = {
+            enabled = true,
+            sprite = "blip_shop_store", -- Valid General Store Icon from rsg-shops
+            -- color = "BLIP_MODIFIER_MP_COLOR_32",
+            label = "Farming Supplies"
+        }
+    },
+    {
+        coords = vector3(-370.96, 754.50, 115.71),
+        heading = 180.0,
+        model = "A_M_M_UniBoatCrew_01",
+        blip = {
+            enabled = true,
+            sprite = "blip_shop_store", -- Valid General Store Icon
+            -- color = "BLIP_MODIFIER_MP_COLOR_32",
+            label = "Farming Supplies"
+        }
+    },
+    {
+        coords = vector3(-756.16, -1318.13, 43.77),
+        heading = 260.85,
+        model = "A_M_M_UniBoatCrew_01",
+        blip = {
+            enabled = true,
+            sprite = "blip_shop_store",
+            label = "Farming Supplies"
+        }
+    },
+    {
+        coords = vector3(-3692.92, -2628.55, -13.69),
+        heading = 88.10,
+        model = "A_M_M_UniBoatCrew_01",
+        blip = {
+            enabled = true,
+            sprite = "blip_shop_store",
+            label = "Farming Supplies"
+        }
+    }
+}
+
+
+
+
+
+
+
+-- Water Interaction Settings
+Config.WaterTypes = {
+    [1] =  {["name"] = "Sea of Coronado",       ["waterhash"] = -247856387, ["watertype"] = "lake"},
+    [2] =  {["name"] = "San Luis River",        ["waterhash"] = -1504425495, ["watertype"] = "river"},
+    [3] =  {["name"] = "Lake Don Julio",        ["waterhash"] = -1369817450, ["watertype"] = "lake"},
+    [4] =  {["name"] = "Flat Iron Lake",        ["waterhash"] = -1356490953, ["watertype"] = "lake"},
+    [5] =  {["name"] = "Upper Montana River",   ["waterhash"] = -1781130443, ["watertype"] = "river"},
+    [6] =  {["name"] = "Owanjila",              ["waterhash"] = -1300497193, ["watertype"] = "river"},
+    [7] =  {["name"] = "HawkEye Creek",         ["waterhash"] = -1276586360, ["watertype"] = "river"},
+    [8] =  {["name"] = "Little Creek River",    ["waterhash"] = -1410384421, ["watertype"] = "river"},
+    [9] =  {["name"] = "Dakota River",          ["waterhash"] = 370072007, ["watertype"] = "river"},
+    [10] =  {["name"] = "Beartooth Beck",       ["waterhash"] = 650214731, ["watertype"] = "river"},
+    [11] =  {["name"] = "Lake Isabella",        ["waterhash"] = 592454541, ["watertype"] = "lake"},
+    [12] =  {["name"] = "Cattail Pond",         ["waterhash"] = -804804953, ["watertype"] = "lake"},
+    [13] =  {["name"] = "Deadboot Creek",       ["waterhash"] = 1245451421, ["watertype"] = "river"},
+    [14] =  {["name"] = "Spider Gorge",         ["waterhash"] = -218679770, ["watertype"] = "river"},
+    [15] =  {["name"] = "O'Creagh's Run",       ["waterhash"] = -1817904483, ["watertype"] = "lake"},
+    [16] =  {["name"] = "Moonstone Pond",       ["waterhash"] = -811730579, ["watertype"] = "lake"},
+    [17] =  {["name"] = "Roanoke Valley",       ["waterhash"] = -1229593481, ["watertype"] = "river"},
+    [18] =  {["name"] = "Elysian Pool",         ["waterhash"] = -105598602, ["watertype"] = "lake"},
+    [19] =  {["name"] = "Lannahechee River",    ["waterhash"] = -2040708515, ["watertype"] = "river"},
+    [20] =  {["name"] = "Dakota River",         ["waterhash"] = 370072007, ["watertype"] = "river"},
+    [21] =  {["name"] = "Random1",              ["waterhash"] = 231313522, ["watertype"] = "river"},
+    [22] =  {["name"] = "Random2",              ["waterhash"] = 2005774838, ["watertype"] = "river"},
+    [23] =  {["name"] = "Random3",              ["waterhash"] = -1287619521, ["watertype"] = "river"},
+    [24] =  {["name"] = "Random4",              ["waterhash"] = -1308233316, ["watertype"] = "river"},
+    [25] =  {["name"] = "Random5",              ["waterhash"] = -196675805, ["watertype"] = "river"},
+}
+
+Config.Seeds = {
+    ["Alaskan Ginseng"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 50, offset = 0.0 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 90, offset = 0.0 }
+        },
+        seedname = "alaskan_ginseng_seed",
+        seedreq = 1,
+        rewarditem = "alaskan_ginseng",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Pumpkin"] = {
+        prop = "p_pumpkin_02x",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0, offset = 0.0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "p_pumpkin_02x", minGrowth = 80 }
+        },
+        seedname = "pumpkin_seed",
+        seedreq = 1,
+        rewarditem = "pumpkin",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 2000,
+        offset = -0.05,
+    },
+    ["American Ginseng"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 50, offset = 0.0 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 90, offset = 0.0 }
+        },
+        seedname = "american_ginseng_seed",
+        seedreq = 1,
+        rewarditem = "american_ginseng",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Hop"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "hop_seed",
+        seedreq = 1,
+        rewarditem = "hop",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 2000,
+        offset = 0.2,
+    },
+    ["Pepper"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "pepper_seed",
+        seedreq = 1,
+        rewarditem = "pimenta",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Black Currant"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "black_currant_seed",
+        seedreq = 1,
+        rewarditem = "black_currant",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Blood Flower"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "blood_flower_seed",
+        seedreq = 1,
+        rewarditem = "Blood_Flower",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Choc Daisy"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "choc_daisy_seed",
+        seedreq = 1,
+        rewarditem = "Choc_Daisy",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Coffee"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 33 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 66 }
+        },
+        seedname = "coffee_seed",
+        seedreq = 1,
+        rewarditem = "coffeebeans",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Creekplum"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "creekplum_seed",
+        seedreq = 1,
+        rewarditem = "creekplum",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Creeking Thyme"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "Creeking_Thyme_Seed",
+        seedreq = 1,
+        rewarditem = "Creeking_Thyme",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Crows Garlic"] = {
+        prop = "crp_potato_aa_sim",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 50 },
+            { prop = "crp_potato_aa_sim", minGrowth = 90 }
+        },
+        seedname = "crows_garlic_seed",
+        seedreq = 1,
+        rewarditem = "crows_garlic",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["English Mace"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "English_Mace_Seed",
+        seedreq = 1,
+        rewarditem = "English_Mace",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Tobacco"] = {
+        prop = "crp_tobaccoplant_bc_sim",
+        stages = {
+            { prop = "crp_tobaccoplant_ca_sim", minGrowth = 0 },
+            { prop = "crp_tobaccoplant_bb_sim", minGrowth = 33 },
+            { prop = "crp_tobaccoplant_bc_sim", minGrowth = 66 }
+        },
+        seedname = "tobacco_seed",
+        seedreq = 1,
+        rewarditem = "tobacco",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 2500,
+        offset = 0.2,
+    },
+    ["Milk Weed"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "milk_weed_seed",
+        seedreq = 1,
+        rewarditem = "milk_weed",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Oleander Sage"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "oleander_sage_seed",
+        seedreq = 1,
+        rewarditem = "oleander_sage",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Oregano"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "Oregano_Seed",
+        seedreq = 1,
+        rewarditem = "Oregano",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Parasol Mushroom"] = {
+        prop = "s_inv_parasol",
+        seedname = "parasol_mushroom_seed",
+        seedreq = 1,
+        rewarditem = "parasol_mushroom",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Prairie Poppy"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "prairie_poppy_seed",
+        seedreq = 1,
+        rewarditem = "prairie_poppy",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Red Raspberry"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "red_raspberry_seed",
+        seedreq = 1,
+        rewarditem = "red_raspberry",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Red Sage"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "red_sage_seed",
+        seedreq = 1,
+        rewarditem = "red_sage",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Tea"] = {
+        prop = "crp_tobaccoplant_bc_sim",
+        stages = {
+            { prop = "crp_tobaccoplant_ba_sim", minGrowth = 0 },
+            { prop = "crp_tobaccoplant_bb_sim", minGrowth = 33 },
+            { prop = "crp_tobaccoplant_bc_sim", minGrowth = 66 }
+        },
+        seedname = "teaseeds",
+        seedreq = 1,
+        rewarditem = "tealeaf",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 2500,
+        offset = 0.2,
+    },
+    ["Carrot"] = {
+        prop = "crp_carrots_ba_sim",
+        stages = {
+            { prop = "crp_carrots_sap_ba_sim", minGrowth = 0 },
+            { prop = "crp_carrots_aa_sim", minGrowth = 33 },
+            { prop = "crp_carrots_ba_sim", minGrowth = 66, offset = 0.0 }
+        },
+        seedname = "carrot_seed",
+        seedreq = 1,
+        rewarditem = "carrot",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Wild Mint"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "wild_mint_seed",
+        seedreq = 1,
+        rewarditem = "wild_mint",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Wintergreen Berry"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "wintergreen_berry_seed",
+        seedreq = 1,
+        rewarditem = "wintergreen_berry",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Yarrow"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "yarrow_seed",
+        seedreq = 1,
+        rewarditem = "yarrow",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Corn"] = {
+        prop = "crp_cornstalks_cb_sim", -- Default (Stage 1)
+        stages = {
+            -- Stage 1: Young (0-33%)
+            { prop = "crp_cornstalks_cb_sim", minGrowth = 0 },
+            -- Stage 2: Medium (33-66%)
+            { prop = "crp_cornstalks_ca_sim", minGrowth = 33 },
+            -- Stage 3: Mature (66-100%)
+            { prop = "crp_cornstalks_ab_sim", minGrowth = 66, offset = 2.5 }
+        },
+        seedname = "corn_seed",
+        seedreq = 1,
+        rewarditem = "Corn",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2, -- Height offset may need adjustment per stage, but fixed for now
+    },
+    ["Apple"] = {
+        prop = "p_tree_orange_01",
+        seedname = "apple_seed",
+        seedreq = 1,
+        rewarditem = "Apple",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.5,
+    },
+    ["Sugar"] = {
+        prop = "crp_sugarcane_ad_sim", -- Default (Mature)
+        stages = {
+            { prop = "crp_sugarcane_aa_sim", minGrowth = 0 },  -- Young
+            { prop = "crp_sugarcane_ab_sim", minGrowth = 50 }, -- Medium
+            { prop = "crp_sugarcane_ad_sim", minGrowth = 90 }  -- Mature/Harvest
+        },
+        seedname = "sugarcaneseed",
+        seedreq = 1,
+        rewarditem = "cana",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 2000,
+        offset = 0.2,
+    },
+    ["Potato"] = {
+        prop = "crp_potato_aa_sim",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0, offset = 0.0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 50 },
+            { prop = "crp_potato_aa_sim", minGrowth = 90 }
+        },
+        seedname = "potato_seed",
+        seedreq = 1,
+        rewarditem = "Potato",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Peach"] = {
+        prop = "p_tree_orange_01",
+        seedname = "peachseeds",
+        seedreq = 1,
+        rewarditem = "consumable_peach",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.5,
+    },
+    ["Cherry"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "cherry_seed",
+        seedreq = 1,
+        rewarditem = "cherry",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.5,
+    },
+    ["Wheat"] = {
+        prop = "crp_wheat_dry_long_aa_sim", -- Default
+        stages = {
+            { prop = "crp_wheat_sap_long_aa_sim", minGrowth = 0 },  -- Young
+            { prop = "crp_wheat_sap_long_ab_sim", minGrowth = 50 }, -- Mature Green
+            { prop = "crp_wheat_dry_long_aa_sim", minGrowth = 90 }  -- Harvest Dry
+        },
+        seedname = "wheat_seed",
+        seedreq = 1,
+        rewarditem = "wheat",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.0,
+    },
+
+    ["Lemon"] = {
+        prop = "p_tree_orange_01",
+        seedname = "lemon_seed",
+        seedreq = 1,
+        rewarditem = "lemon",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.0,
+    },
+    ["Barley"] = {
+        prop = "crp_wheat_dry_long_aa_sim",
+        stages = {
+            { prop = "crp_wheat_sap_long_aa_sim", minGrowth = 0 },
+            { prop = "crp_wheat_sap_long_ab_sim", minGrowth = 50 },
+            { prop = "crp_wheat_dry_long_aa_sim", minGrowth = 90 }
+        },
+        seedname = "barley_seed",
+        seedreq = 1,
+        rewarditem = "barley",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.0,
+    },
+    ["Banana"] = {
+        prop = "p_tree_banana_01_lg",
+        seedname = "banana_seed",
+        seedreq = 1,
+        rewarditem = "banana",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.0,
+    },
+    ["Tomato"] = {
+        prop = "crp_tomatoes_har_aa_sim", -- Default
+        stages = {
+            { prop = "crp_tomatoes_sap_aa_sim", minGrowth = 0 },  -- Young
+            { prop = "crp_tomatoes_har_aa_sim", minGrowth = 50 },     -- Flowering
+            { prop = "crp_tomatoes_aa_sim", minGrowth = 90 }  -- Ripe
+        },
+        seedname = "tomato_seed",
+        seedreq = 1,
+        rewarditem = "tomato",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Lettuce"] = {
+        prop = "crp_lettuce_aa_sim",
+        stages = {
+            { prop = "s_inv_wildmint01x", minGrowth = 0 },   -- Generic Sprout (Young)
+            { prop = "crp_lettuce_aa_sim", minGrowth = 50 }, -- Growing
+            { prop = "crp_lettuce_aa_sim", minGrowth = 90 }  -- Mature
+        },
+        seedname = "lettuce_seed",
+        seedreq = 1,
+        rewarditem = "lettuce",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.2,
+    },
+    ["Broccoli"] = {
+        prop = "crp_broccoli_aa_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 40 },
+            { prop = "crp_broccoli_aa_sim", minGrowth = 80 }
+        },
+        seedname = "broccoli_seed",
+        seedreq = 1,
+        rewarditem = "broccoli",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.2,
+    },
+    ["Agarita"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "agarita_seed",
+        seedreq = 1,
+        rewarditem = "agarita",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Bay Bolete"] = {
+        prop = "crp_cotton_bd_sim",
+        stages = {
+            { prop = "crp_cotton_ba_sim", minGrowth = 0 },
+            { prop = "crp_cotton_bb_sim", minGrowth = 40 },
+            { prop = "crp_cotton_bd_sim", minGrowth = 85 }
+        },
+        seedname = "bay_bolete_seed",
+        seedreq = 1,
+        rewarditem = "bay_bolete",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Blackberry"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "blackberry_seed",
+        seedreq = 1,
+        rewarditem = "blackberry",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Evergreen Huckleberry"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "evergreen_huckleberry_seed",
+        seedreq = 1,
+        rewarditem = "evergreen_huckleberry",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Strawberry"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "strawberry_seed",
+        seedreq = 1,
+        rewarditem = "strawberry",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Onion"] = {
+        prop = "crp_potato_aa_sim",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0, offset = 0.0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 50 },
+            { prop = "crp_potato_aa_sim", minGrowth = 90 }
+        },
+        seedname = "onion_seed",
+        seedreq = 1,
+        rewarditem = "onion",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Artichoke"] = {
+        prop = "crp_lettuce_aa_sim",
+        stages = {
+            { prop = "s_inv_wildmint01x", minGrowth = 0 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 50 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 90 }
+        },
+        seedname = "artichoke_seed",
+        seedreq = 1,
+        rewarditem = "artichoke",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.2,
+    },
+    ["Beans"] = {
+        prop = "crp_ginseng_ba_sim",
+        stages = {
+            { prop = "crp_ginseng_aa_sim", minGrowth = 0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "crp_ginseng_ba_sim", minGrowth = 80, offset = 0.0 }
+        },
+        seedname = "beans_seed",
+        seedreq = 1,
+        rewarditem = "beans",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 2000,
+        offset = 0.2,
+    },
+    ["Beetroot"] = {
+        prop = "crp_carrots_ba_sim",
+        stages = {
+            { prop = "crp_carrots_sap_ba_sim", minGrowth = 0 },
+            { prop = "crp_carrots_aa_sim", minGrowth = 33 },
+            { prop = "crp_carrots_ba_sim", minGrowth = 66, offset = 0.0 }
+        },
+        seedname = "beetroot_seed",
+        seedreq = 1,
+        rewarditem = "beetroot",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Cabbage"] = {
+        prop = "crp_lettuce_aa_sim",
+        stages = {
+            { prop = "s_inv_wildmint01x", minGrowth = 0 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 50 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 90 }
+        },
+        seedname = "cabbage_seed",
+        seedreq = 1,
+        rewarditem = "cabbage",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.2,
+    },
+    ["Celery"] = {
+        prop = "crp_lettuce_aa_sim",
+        stages = {
+            { prop = "s_inv_wildmint01x", minGrowth = 0 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 50 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 90 }
+        },
+        seedname = "celery_seed",
+        seedreq = 1,
+        rewarditem = "celery",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.2,
+    },
+    ["Cucumber"] = {
+        prop = "crp_lettuce_aa_sim",
+        stages = {
+            { prop = "s_inv_wildmint01x", minGrowth = 0 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 50 },
+            { prop = "crp_lettuce_aa_sim", minGrowth = 90 }
+        },
+        seedname = "cucumber_seed",
+        seedreq = 1,
+        rewarditem = "cucumber",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.2,
+    },
+    ["Grapes"] = {
+        prop = "crp_berry_har_aa_sim",
+        stages = {
+            { prop = "crp_berry_sap_aa_sim", minGrowth = 0 },
+            { prop = "crp_berry_aa_sim", minGrowth = 40 },
+            { prop = "crp_berry_har_aa_sim", minGrowth = 85 }
+        },
+        seedname = "grapes_seed",
+        seedreq = 1,
+        rewarditem = "grapes",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Lime"] = {
+        prop = "p_tree_orange_01",
+        seedname = "lime_seed",
+        seedreq = 1,
+        rewarditem = "lime",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.5,
+    },
+    ["Mango"] = {
+        prop = "p_tree_orange_01",
+        seedname = "mango_seed",
+        seedreq = 1,
+        rewarditem = "mango",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.5,
+    },
+    ["Orange"] = {
+        prop = "p_tree_orange_01",
+        seedname = "orange_seed",
+        seedreq = 1,
+        rewarditem = "orange",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.5,
+    },
+    ["Pear"] = {
+        prop = "p_tree_orange_01",
+        seedname = "pear_seed",
+        seedreq = 1,
+        rewarditem = "pear",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.5,
+    },
+    ["Watermelon"] = {
+        prop = "p_pumpkin_02x",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0, offset = 0.0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "p_pumpkin_02x", minGrowth = 80 }
+        },
+        seedname = "watermelon_seed",
+        seedreq = 1,
+        rewarditem = "watermelon",
+        rewardcount = 4,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = -0.05,
+    },
+    ["Peanuts"] = {
+        prop = "crp_potato_aa_sim",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0, offset = 0.0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 50 },
+            { prop = "crp_potato_aa_sim", minGrowth = 90 }
+        },
+        seedname = "peanut_seed",
+        seedreq = 1,
+        rewarditem = "raw_peanuts",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 4000,
+        offset = 0.2,
+    },
+    ["Rice"] = {
+        prop = "crp_wheat_dry_long_aa_sim",
+        stages = {
+            { prop = "crp_wheat_sap_long_aa_sim", minGrowth = 0 },
+            { prop = "crp_wheat_sap_long_ab_sim", minGrowth = 50 },
+            { prop = "crp_wheat_dry_long_aa_sim", minGrowth = 90 }
+        },
+        seedname = "rice_seed",
+        seedreq = 1,
+        rewarditem = "rice",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 3000,
+        offset = 0.0,
+    },
+    ["Squash"] = {
+        prop = "p_pumpkin_02x",
+        stages = {
+            { prop = "crp_ginseng_ab_sim", minGrowth = 0, offset = 0.0 },
+            { prop = "crp_potato_aa_sim", minGrowth = 40 },
+            { prop = "p_pumpkin_02x", minGrowth = 80 }
+        },
+        seedname = "squash_seed",
+        seedreq = 1,
+        rewarditem = "squash",
+        rewardcount = 6,
+        timetowater = 10,
+        totaltime = 15,
+        difficulty = 2000,
+        offset = -0.05,
+    },
+}
+
+-- Defines the Shop Items (Tools + Manual Seed List)
+Config.ShopItems = {
+    -- Tools
+    { name = 'emptybucket',             price = 2,  amount = 100, info = {}, type = "item", slot = 1 },
+    { name = 'fertilizer',              price = 5,  amount = 100, info = {}, type = "item", slot = 2 },
+    { name = 'shovel',                  price = 5,  amount = 100, info = {}, type = "item", slot = 3 },
+    
+    -- Seeds
+    { name = "alaskan_ginseng_seed",    price = 1,  amount = 100, info = {}, type = "item", slot = 4 },
+    { name = "american_ginseng_seed",   price = 1,  amount = 100, info = {}, type = "item", slot = 5 },
+    { name = "hop_seed",                price = 1,  amount = 100, info = {}, type = "item", slot = 6 },
+    { name = "black_currant_seed",      price = 1,  amount = 100, info = {}, type = "item", slot = 7 },
+    { name = "creekplum_seed",          price = 1,  amount = 100, info = {}, type = "item", slot = 8 },
+    { name = "crows_garlic_seed",       price = 1,  amount = 100, info = {}, type = "item", slot = 9 },
+    { name = "indian_tobbaco_seed",     price = 1,  amount = 100, info = {}, type = "item", slot = 10 },
+    { name = "milk_weed_seed",          price = 1,  amount = 100, info = {}, type = "item", slot = 11 },
+    { name = "oleander_sage_seed",      price = 1,  amount = 100, info = {}, type = "item", slot = 12 },
+    { name = "parasol_mushroom_seed",   price = 1,  amount = 100, info = {}, type = "item", slot = 13 },
+    { name = "prairie_poppy_seed",      price = 1,  amount = 100, info = {}, type = "item", slot = 14 },
+    { name = "red_raspberry_seed",      price = 1,  amount = 100, info = {}, type = "item", slot = 15 },
+    { name = "red_sage_seed",           price = 1,  amount = 100, info = {}, type = "item", slot = 16 },
+    { name = "carrot_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 17 },
+    { name = "wild_mint_seed",          price = 1,  amount = 100, info = {}, type = "item", slot = 18 },
+    { name = "wintergreen_berry_seed",  price = 1,  amount = 100, info = {}, type = "item", slot = 19 },
+    { name = "yarrow_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 20 },
+    { name = "corn_seed",               price = 1,  amount = 100, info = {}, type = "item", slot = 21 },
+    { name = "apple_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 22 },
+    { name = "potato_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 23 },
+    { name = "wheat_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 24 },
+    { name = "pumpkin_seed",            price = 1,  amount = 100, info = {}, type = "item", slot = 25 },
+    { name = "coffee_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 26 },
+    { name = "pepper_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 27 },
+    { name = "blood_flower_seed",       price = 1,  amount = 100, info = {}, type = "item", slot = 28 },
+    { name = "choc_daisy_seed",         price = 1,  amount = 100, info = {}, type = "item", slot = 29 },
+    { name = "hummingbird_sage_seed",   price = 1,  amount = 100, info = {}, type = "item", slot = 30 },
+    { name = "tobacco_seed",            price = 1,  amount = 100, info = {}, type = "item", slot = 31 },
+    { name = "cherry_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 32 },
+    { name = "lemon_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 33 },
+    { name = "barley_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 34 },
+    { name = "banana_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 35 },
+    { name = "lettuce_seed",            price = 1,  amount = 100, info = {}, type = "item", slot = 36 },
+    { name = "broccoli_seed",           price = 1,  amount = 100, info = {}, type = "item", slot = 37 },
+    { name = "sugarcaneseed",           price = 1,  amount = 100, info = {}, type = "item", slot = 38 },
+    { name = "tomato_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 39 },
+    { name = "teaseeds",                price = 1,  amount = 100, info = {}, type = "item", slot = 40 },
+    { name = "English_Mace_Seed",       price = 1,  amount = 100, info = {}, type = "item", slot = 41 },
+    { name = "Oregano_Seed",            price = 1,  amount = 100, info = {}, type = "item", slot = 42 },
+    { name = "Creeking_Thyme_Seed",     price = 1,  amount = 100, info = {}, type = "item", slot = 43 },
+    { name = "agarita_seed",            price = 1,  amount = 100, info = {}, type = "item", slot = 44 },
+    { name = "bay_bolete_seed",         price = 1,  amount = 100, info = {}, type = "item", slot = 45 },
+    { name = "blackberry_seed",         price = 1,  amount = 100, info = {}, type = "item", slot = 46 },
+    { name = "evergreen_huckleberry_seed", price = 1, amount = 100, info = {}, type = "item", slot = 47 },
+    { name = "strawberry_seed",         price = 1,  amount = 100, info = {}, type = "item", slot = 48 },
+    { name = "onion_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 49 },
+    { name = "artichoke_seed",           price = 1,  amount = 100, info = {}, type = "item", slot = 50 },
+    { name = "beans_seed",               price = 1,  amount = 100, info = {}, type = "item", slot = 51 },
+    { name = "beetroot_seed",            price = 1,  amount = 100, info = {}, type = "item", slot = 52 },
+    { name = "cabbage_seed",             price = 1,  amount = 100, info = {}, type = "item", slot = 53 },
+    { name = "celery_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 54 },
+    { name = "cucumber_seed",            price = 1,  amount = 100, info = {}, type = "item", slot = 55 },
+    { name = "grapes_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 56 },
+    { name = "lime_seed",                price = 1,  amount = 100, info = {}, type = "item", slot = 57 },
+    { name = "mango_seed",               price = 1,  amount = 100, info = {}, type = "item", slot = 58 },
+    { name = "orange_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 59 },
+    { name = "pear_seed",                price = 1,  amount = 100, info = {}, type = "item", slot = 60 },
+    { name = "watermelon_seed",          price = 1,  amount = 100, info = {}, type = "item", slot = 61 },
+    { name = "peanut_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 62 },
+    { name = "rice_seed",                price = 1,  amount = 100, info = {}, type = "item", slot = 63 },
+    { name = "squash_seed",              price = 1,  amount = 100, info = {}, type = "item", slot = 64 },
+}
